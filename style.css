@@ -37,7 +37,7 @@ span i{
     color: red;
 }
 
-span i{
+.minus span i{
     color: red;
 }
 .container{
@@ -169,3 +169,11 @@ span i{
 span i{
     margin-left: 0.5rem;
 }
+
+.transaction .transaction-title{
+    font-size: 3.5rem;
+    color: black;
+    margin-bottom: 1rem;
+
+}
+
