@@ -16,7 +16,30 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
+.plus{
+    border: 1px solid green;
+}
 
+.plus h4{
+    color: green;
+}
+
+span i{
+    color: green;
+}
+
+.minus{
+    border: 1px solid green;
+
+}
+
+.minus h4{
+    color: red;
+}
+
+span i{
+    color: red;
+}
 .container{
     background-color: rgb(243, 235, 235);
     width: 75rem;
@@ -31,4 +54,118 @@ body{
     padding-top: 5rem;
     padding-bottom: 4rem;
     color: black;
+}
+
+.balance {
+    width: 65rem;
+    height: 20rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0,0,0,0.35);
+}
+
+.balance h1{
+    font-size: 7rem;
+    font-weight: bold;
+    color: black;
+}
+
+.balance h4{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: black;
+}
+
+.inc-exp-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.income{
+    display: flex;
+    flex-direction: column;
+    justify-content: cneter;
+    width: 30rem;
+    height: 13rem;
+    background-color: white;
+    padding: 0rem 3rem 0rem 3rem;
+    border: 0.3rem solid green;
+
+}
+
+.income h2{
+    font-size: 3.5rem;
+    color: green;
+
+}
+
+.income h4{
+    font-size: 1.8rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.expense{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30rem;
+    height: 13rem;
+    background-color: white;
+     padding: 0rem 3rem 0rem 3rem;
+    border: 0.3rem solid red;
+}
+
+.expense h2{
+    font-size: 3.5rem;
+    color: green;
+
+}
+
+.expense h4{
+    font-size: 1.8rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.history .title-history{
+    font-size: 3.5rem;
+    color: black;
+    padding-bottom: 2.5rem;
+}
+
+.history-box{
+    height: 34rem;
+    overflow: hidden;
+
+}
+
+.history-box li{
+    list-style: none;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.history h4{
+    font-size: 2rem;
+
+}
+
+.history span{
+    font-size: 2rem;
+
+}
+
+span i{
+    margin-left: 0.5rem;
 }
