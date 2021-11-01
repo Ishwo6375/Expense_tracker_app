@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="style.css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <script defer src="script.js"></script>
 </head>
 <body>
@@ -22,12 +23,12 @@
        <!-- Income Expense container -->
       <div class="inc-exp-container">
           <div class="income">
-              <h2 id="income">$0.00</h2>
+              <h2 id="income">$0.00 <i class="fas fa-caret-up"></i></h2>
               <h4>Income</h4>
           </div>
 
           <div class="expense">
-              <h2 id="expense">$0.00</h2>
+              <h2 id="expense">$0.00 <i class="fas fa-caret-down"></i></h2>
               <h4>Expense</h4>
           </div>
       </div>
@@ -36,7 +37,11 @@
       <div class="history">
           <h2 class="title-history">History</h2>
           <ul class="history-box" id="list">
-              <li class="plus"><h4>Payement</h4><span>+$100</span></li>
+              <li class="plus"><h4>Payement</h4><span>+$100
+                <i class="fas fa-caret-up"></i>
+                 <i class="fas fa-trash-alt"></i>
+              </span>
+              </li>
           </ul>
       </div>
 
