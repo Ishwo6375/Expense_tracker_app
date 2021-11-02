@@ -6,14 +6,14 @@ const form = document.getElementById("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 
-const dummyTransactions = [
-  { id: 1, text: "Flower", amount: -20 },
-  { id: 1, text: "Salary", amount: 300 },
-  { id: 1, text: "Book", amount: -10 },
-  { id: 1, text: "Camera", amount: -120 },
-];
+// const dummyTransactions = [
+//   { id: 1, text: "Flower", amount: -20 },
+//   { id: 1, text: "Salary", amount: 300 },
+//   { id: 1, text: "Book", amount: -10 },
+//   { id: 1, text: "Camera", amount: -120 },
+// ];
 
-let transactions = dummyTransactions;
+let transactions = [];
 
 function addTransactionDOM(transaction) {
   const sign = transaction.amount > 0 ? "+" : "-";
@@ -23,7 +23,9 @@ function addTransactionDOM(transaction) {
   item.classList.add(transaction.amount > 0 ? "plus" : "minus");
   item.innerHTML = `<h4>${transaction.text}</h4> <span>${sign}$${Math.abs(
     transaction.amount
-  )}<i class="fas fa-caret-${icon}"></i><i class="fas fa-trash-alt"></i></span>`;
+  )}<i class="fas fa-caret-${icon}"></i><i class="fas fa-trash-alt" onclick="removeItem(${
+    transaction.id
+  })"></i></span>`;
   list.appendChild(item);
 }
 
@@ -48,13 +50,36 @@ function updateValue() {
   )} <i class="fas fa-caret-down"></i>`;
 }
 
-form.addEventListener('submit', (e)=> {
- e.preventDefault();
+function randomId() {
+  return Math.floor(Math.random() * 1000);
+}
 
- if(text.value.trim() === "" || amount.value.trim() === "") {
-     alert('Please fill your data first');
- }
-})
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (text.value.trim() === "" || amount.value.trim() === "") {
+    alert("Please fill your data first");
+  } else {
+    const transaction = {
+      id: randomId(),
+      text: text.value,
+      amount: parseInt(amount.value),
+    };
+
+    transactions.push(transaction);
+
+    addTransactionDOM(transaction);
+    updateValue();
+
+    text.value = ``;
+    amount.value = "";
+  }
+});
+
+function removeItem(id) {
+  transactions = transactions.filter((transaction) => transaction.id !== id);
+  init();
+}
 
 //init
 
