@@ -63,7 +63,7 @@ span i{
     url("https://wallpapercave.com/wp/wp2015308.jpg");
   background-size: cover;
   background-position: center;
-    width: 75rem;
+    width: 80vh;
     padding: 5rem;
     box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0,0,0,0.35);
 }
