@@ -48,6 +48,14 @@ function updateValue() {
   )} <i class="fas fa-caret-down"></i>`;
 }
 
+form.addEventListener('submit', (e)=> {
+ e.preventDefault();
+
+ if(text.value.trim() === "" || amount.value.trim() === "") {
+     alert('Please fill your data first');
+ }
+})
+
 //init
 
 function init() {
