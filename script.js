@@ -13,7 +13,11 @@ const amount = document.getElementById("amount");
 //   { id: 1, text: "Camera", amount: -120 },
 // ];
 
-let transactions = [];
+
+const localStorageTransactions = JSON.parse(
+  localStorage.getItem("transactions")
+);
+let transactions = localStorage.getItem('transaction') !== null ? localStorageTransactions : [];
 
 function addTransactionDOM(transaction) {
   const sign = transaction.amount > 0 ? "+" : "-";
