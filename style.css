@@ -77,6 +77,15 @@ span i{
     color: black;
 }
 
+.para{
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+   text-align: center;
+}
+
+
+
 .balance {
     width: 65rem;
     height: 20rem;
