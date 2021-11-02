@@ -17,7 +17,7 @@ const amount = document.getElementById("amount");
 const localStorageTransactions = JSON.parse(
   localStorage.getItem("transactions")
 );
-let transactions = localStorage.getItem('transaction') !== null ? localStorageTransactions : [];
+let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
 function addTransactionDOM(transaction) {
   const sign = transaction.amount > 0 ? "+" : "-";
@@ -74,6 +74,7 @@ form.addEventListener("submit", (e) => {
 
     addTransactionDOM(transaction);
     updateValue();
+    updateLocalStorage();
 
     text.value = ``;
     amount.value = "";
@@ -82,15 +83,19 @@ form.addEventListener("submit", (e) => {
 
 function removeItem(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
+  updateLocalStorage();
   init();
 }
 
+function updateLocalStorage(){
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+}
 //init
 
 function init() {
   list.innerHTML = ``;
 
-  dummyTransactions.forEach(addTransactionDOM);
+transactions.forEach(addTransactionDOM);
   updateValue();
 }
 
